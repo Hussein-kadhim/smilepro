@@ -1,0 +1,17 @@
+﻿:root{--bg:#eef6f4;--card:#fff;--ink:#16352f;--muted:#5f7a74;--line:#d5e4df;--accent:#0f766e;--accent2:#0ea5a4;--warn:#b45309;--danger:#b91c1c;--ok:#15803d}
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#dff3ef,#eef6f4 40%,#f7fbfa);color:var(--ink)}
+.shell{max-width:1100px;margin:0 auto;padding:24px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.brand{font-size:28px;font-weight:800;letter-spacing:-.03em}.brand span{color:var(--accent)}.badge{background:#d1fae5;color:#065f46;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(15,118,110,.06)}
+h1{margin:0 0 6px;font-size:26px}p.lead{margin:0 0 16px;color:var(--muted)}
+.grid{display:grid;gap:14px}.grid-2{grid-template-columns:1.2fr .8fr}.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:800px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}.nav a{text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-size:13px}
+.nav a.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.box{border:1px dashed #9ebbb4;background:#f8fcfb;border-radius:12px;padding:14px;min-height:70px}
+.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;font-weight:700}
+.row{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:default}
+.btn-primary{background:var(--accent);color:#fff}.btn-secondary{background:#ecfeff;color:#155e75}.btn-danger{background:#fee2e2;color:var(--danger)}.btn-ok{background:#dcfce7;color:var(--ok)}
+.table{width:100%;border-collapse:collapse}.table th,.table td{border-bottom:1px solid var(--line);padding:10px;text-align:left;font-size:14px}.table th{color:var(--muted);font-size:12px}
+.slot{padding:10px;border-radius:10px;background:#ecfdf5;border:1px solid #a7f3d0;text-align:center;font-weight:700}.slot.off{background:#f8fafc;border-color:#e2e8f0;color:#94a3b8}
+.note{margin-top:14px;font-size:13px;color:var(--muted)}
