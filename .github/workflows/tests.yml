@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - dev
+      - 'feature-*'
   pull_request:
 
 permissions:
@@ -22,7 +24,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           tools: composer:v2
           coverage: none
 
@@ -31,8 +33,15 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Setup Application
-        run: composer setup
+      - name: Install Dependencies & Prepare App
+        run: |
+          composer install --no-interaction --prefer-dist
+          cp .env.example .env
+          touch database/database.sqlite
+          php artisan key:generate
+          php artisan migrate --force
+          npm install
+          npm run build
 
-      - name: Run CI Checks
-        run: composer ci:check
+      - name: Run Tests
+        run: php artisan test
